@@ -28,4 +28,4 @@ class MailService {
     }
 }
 
-modelu.exports = new MailService();
+module.exports = new MailService();
