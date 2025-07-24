@@ -54,9 +54,17 @@ class AuthService {
         };
     }
 
-    verifyToken(token) {
+    verifyAccessToken(token) {
         try {
             return jwt.verify(token, process.env.ACCESS_SECRET);
+        } catch (err) {
+            return null;
+        }
+    }
+
+    verifyRefreshToken(token) {
+        try {
+            return jwt.verify(token, process.env.REFRESH_SECRET);
         } catch (err) {
             return null;
         }
