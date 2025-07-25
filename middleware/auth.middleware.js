@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
         return next();
     }
     try {
-        const verified = AuthService.verifyToken(
+        const verified = AuthService.verifyAccessToken(
             req.headers.authorization.split("")[1]
         );
         if (!verified) {
